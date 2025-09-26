@@ -32,6 +32,8 @@ jobs:
         run: echo "${{ secrets.docker_password }}" | docker login -u "${{ secrets.practice_user }}" --password-stdin
 
       # Step 6: Push docker image
+      - name: Push docker image
+        run: docker push ${{secrets.practice_user}}/mohita:2
       # Step 5: Log into Docker Hub
       - name: Log into Docker Hub
         uses: docker/login-action@v2
